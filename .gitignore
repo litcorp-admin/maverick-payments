@@ -1,0 +1,26 @@
+# Environment variables (NEVER commit these)
+.env
+.env.test
+.env.prod
+
+# Node modules
+node_modules/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+.cache/
+
+# HubSpot CLI config (contains tokens)
+.hubspot/
+hubspot.config.yml
