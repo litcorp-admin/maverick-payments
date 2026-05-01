@@ -6,11 +6,21 @@ const hubspotClient = new hubspot.Client({ accessToken: process.env.HUBSPOT_ACCE
 const PRODUCTION_PORTAL_ID = process.env.PRODUCTION_PORTAL_ID;
 const CURRENT_PORTAL_ID = process.env.HUBSPOT_PORTAL_ID;
 
-if (process.env.ENVIRONMENT === 'production' && CURRENT_PORTAL_ID === PRODUCTION_PORTAL_ID) {
-  console.error('PRODUCTION SAFETY CHECK FAILED');
-  console.error('Delete operations in production require manual confirmation.');
-  console.error('Set CONFIRM_DELETE=yes to proceed.');
-  if (process.env.CONFIRM_DELETE !== 'yes') {
+// CRITICAL SAFETY CHECK - Never delete from production without explicit override
+if (CURRENT_PORTAL_ID === PRODUCTION_PORTAL_ID && !process.env.ALLOW_PROD_DELETE) {
+  console.error('❌ DELETE SCRIPT BLOCKED ON PRODUCTION PORTAL');
+  console.error(`Portal ID ${CURRENT_PORTAL_ID} matches PRODUCTION_PORTAL_ID`);
+  console.error('This script will NOT run on production without explicit override.');
+  console.error('To proceed, set: ALLOW_PROD_DELETE=yes');
+  process.exit(1);
+}
+
+// Secondary check for ENVIRONMENT variable
+if (process.env.ENVIRONMENT === 'production') {
+  console.warn('⚠️  WARNING: ENVIRONMENT=production detected');
+  console.warn('Double-check you intended to run this on production.');
+  if (!process.env.ALLOW_PROD_DELETE) {
+    console.error('Set ALLOW_PROD_DELETE=yes to proceed.');
     process.exit(1);
   }
 }
