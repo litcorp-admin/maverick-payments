@@ -5,11 +5,7 @@
     "type": "number",
     "fieldType": "number",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_birthday",
@@ -17,11 +13,7 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_campaign_bounce_reason",
@@ -29,11 +21,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_campaign_bounce_type",
@@ -41,11 +29,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_campaign_click_date",
@@ -53,23 +37,15 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
-    "name": "pd_campaign_clicked_link_URL",
+    "name": "pd_campaign_clicked_link_url",
     "label": "PD-Campaign clicked link URL",
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_campaign_clicks",
@@ -77,11 +53,7 @@
     "type": "number",
     "fieldType": "number",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_campaign_delivered_date",
@@ -89,11 +61,7 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_campaign_open_date",
@@ -101,11 +69,7 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_campaign_opens",
@@ -113,11 +77,7 @@
     "type": "number",
     "fieldType": "number",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_campaign_send_date",
@@ -125,11 +85,7 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_subscribed_date",
@@ -137,11 +93,7 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_campaign_title",
@@ -149,11 +101,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_campaign_unsubscribed_date",
@@ -161,11 +109,7 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_closed_deals_count",
@@ -173,11 +117,7 @@
     "type": "number",
     "fieldType": "number",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_date_reseller_agreement",
@@ -185,11 +125,7 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_done_activities_count",
@@ -197,23 +133,29 @@
     "type": "number",
     "fieldType": "number",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_doi_status",
     "label": "PD-Double opt-in",
     "type": "bool",
-    "fieldType": "text",
+    "fieldType": "booleancheckbox",
     "groupName": "pipedrivemigration",
     "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "options": [
+      {
+        "label": "Yes",
+        "value": "true",
+        "displayOrder": 0,
+        "hidden": false
+      },
+      {
+        "label": "No",
+        "value": "false",
+        "displayOrder": 1,
+        "hidden": false
+      }
+    ]
   },
   {
     "name": "pd_email_messages_count",
@@ -221,11 +163,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_people_id",
@@ -233,11 +171,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_im",
@@ -245,11 +179,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_label",
@@ -257,11 +187,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_label_ids",
@@ -269,11 +195,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_last_activity_date",
@@ -281,11 +203,7 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_last_campaign_send_date",
@@ -293,11 +211,7 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_last_incoming_mail_time",
@@ -305,11 +219,7 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_last_outgoing_mail_time",
@@ -317,11 +227,7 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_linkedin_profile_personal",
@@ -329,11 +235,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_lost_deals_count",
@@ -341,11 +243,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_marketing_status",
@@ -353,11 +251,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_name",
@@ -365,11 +259,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_next_activity_date",
@@ -377,23 +267,15 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_notes",
     "label": "PD-Notes",
-    "type": "textarea",
-    "fieldType": "text",
+    "type": "string",
+    "fieldType": "textarea",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_open_deals_count",
@@ -401,11 +283,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_org_id",
@@ -413,11 +291,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_pec_rm",
@@ -425,11 +299,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_add_time",
@@ -437,11 +307,7 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_picture_id",
@@ -449,11 +315,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_reseller_version",
@@ -461,11 +323,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_activities_count",
@@ -473,11 +331,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_campaign_clicks_total",
@@ -485,11 +339,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_campaign_opens_total",
@@ -497,11 +347,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_update_time",
@@ -509,11 +355,7 @@
     "type": "date",
     "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_visible_to",
@@ -521,11 +363,7 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   },
   {
     "name": "pd_won_deals_count",
@@ -533,10 +371,6 @@
     "type": "string",
     "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at time of data migration.",
-    "formField": false,
-    "hasUniqueValue": false,
-    "hidden": false,
-    "displayOrder": -1
+    "description": "Value in Pipedrive at time of data migration."
   }
 ]

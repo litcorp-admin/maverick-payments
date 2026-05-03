@@ -21,6 +21,10 @@ npm-debug.log*
 *.tmp
 .cache/
 
+# Script run artifacts
+results.json
+extracts/
+
 # HubSpot CLI config (contains tokens)
 .hubspot/
 hubspot.config.yml
