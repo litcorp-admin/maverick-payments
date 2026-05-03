@@ -1,58 +1,71 @@
-const axios = require('axios');
 require('dotenv').config();
+const hubspot = require('@hubspot/api-client');
 
-const HUBSPOT_ACCESS_TOKEN = process.env.HUBSPOT_ACCESS_TOKEN;
-const HUBSPOT_PORTAL_ID = process.env.HUBSPOT_PORTAL_ID;
-const ENVIRONMENT = process.env.ENVIRONMENT;
-const PRODUCTION_PORTAL_ID = process.env.PRODUCTION_PORTAL_ID;
+const hubspotClient = new hubspot.Client({ accessToken: process.env.HUBSPOT_ACCESS_TOKEN });
 
-if (!HUBSPOT_ACCESS_TOKEN || !HUBSPOT_PORTAL_ID) {
-  console.error('Error: HUBSPOT_ACCESS_TOKEN or HUBSPOT_PORTAL_ID not set');
+// Hard allowlist: this script ONLY runs against the test portal.
+// To delete groups from any other portal (including production),
+// use the HubSpot UI manually. There is intentionally no override flag.
+const ALLOWED_PORTAL_ID = '51225486';
+const CURRENT_PORTAL_ID = process.env.HUBSPOT_PORTAL_ID;
+
+if (!process.env.HUBSPOT_ACCESS_TOKEN) {
+  console.error('Error: HUBSPOT_ACCESS_TOKEN not set');
   process.exit(1);
 }
 
-if (ENVIRONMENT === 'production' && HUBSPOT_PORTAL_ID !== PRODUCTION_PORTAL_ID) {
-  console.error('Error: Production portal ID mismatch. Aborting for safety.');
+if (CURRENT_PORTAL_ID !== ALLOWED_PORTAL_ID) {
+  console.error('❌ DELETE SCRIPT BLOCKED');
+  console.error(`This script only runs against test portal ${ALLOWED_PORTAL_ID}.`);
+  console.error(`Current HUBSPOT_PORTAL_ID is "${CURRENT_PORTAL_ID || 'not set'}".`);
+  console.error('Use the HubSpot UI to remove groups from any other portal.');
   process.exit(1);
 }
 
 const GROUPS_TO_DELETE = ['pipedrivemigration', 'marketinginformation'];
-const OBJECTS = ['contacts', 'companies', 'deals', 'leads'];
+const OBJECT_TYPES = ['contacts', 'companies', 'deals', 'leads'];
 
 async function deleteGroup(objectType, groupName) {
   try {
-    await axios.delete(
-      `https://api.hubapi.com/crm/v3/properties/${objectType}/groups/${groupName}`,
-      {
-        headers: {
-          Authorization: `Bearer ${HUBSPOT_ACCESS_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+    await hubspotClient.crm.properties.groupsApi.archive(objectType, groupName);
     console.log(`✓ Deleted group '${groupName}' from ${objectType}`);
+    return { deleted: true };
   } catch (error) {
-    if (error.response?.status === 404) {
+    if (error.code === 404) {
       console.log(`⊘ Group '${groupName}' not found on ${objectType} (already deleted)`);
-    } else {
-      console.error(`✗ Error deleting group '${groupName}' from ${objectType}:`, error.response?.data || error.message);
+      return { skipped: true };
     }
+    const msg = error.message || 'unknown error';
+    console.error(`✗ Failed to delete '${groupName}' from ${objectType}: ${msg}`);
+    if (/contains|not empty|propert/i.test(msg)) {
+      console.error('   (group still contains properties — run delete-properties.js first)');
+    }
+    return { failed: true };
   }
 }
 
 async function main() {
-  console.log(`\n🗑️  Starting group deletion (${ENVIRONMENT})\n`);
+  console.log('⚠️  GROUP DELETE OPERATION');
+  console.log(`Environment: ${process.env.ENVIRONMENT || 'not set'}`);
+  console.log(`Portal ID: ${CURRENT_PORTAL_ID}`);
+  console.log(`Groups to delete: ${GROUPS_TO_DELETE.join(', ')}\n`);
 
-  for (const objectType of OBJECTS) {
+  const totals = { deleted: 0, skipped: 0, failed: 0 };
+  for (const objectType of OBJECT_TYPES) {
+    console.log(`\n${objectType.toUpperCase()}:`);
     for (const groupName of GROUPS_TO_DELETE) {
-      await deleteGroup(objectType, groupName);
+      const r = await deleteGroup(objectType, groupName);
+      if (r.deleted) totals.deleted++;
+      else if (r.skipped) totals.skipped++;
+      else totals.failed++;
+      await new Promise(resolve => setTimeout(resolve, 100));
     }
   }
 
-  console.log('\n✓ Group deletion complete\n');
+  console.log(`\nDeletion complete: ${totals.deleted} deleted, ${totals.skipped} not-found, ${totals.failed} failed`);
 }
 
 main().catch(error => {
-  console.error('Fatal error:', error);
+  console.error('Fatal error:', error.message || error);
   process.exit(1);
 });
