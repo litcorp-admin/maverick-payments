@@ -15,30 +15,9 @@ This repository contains scripts to create custom properties in HubSpot for:
 ## Prerequisites
 
 - Node.js 22+
-- HubSpot CLI 8.5.0+
-- Private App Access Token with required scopes
-
-## Project Structure
-cat > README.md << 'EOF'
-# Maverick Payments - HubSpot Migration
-
-Property creation automation for Maverick Payments migration from Pipedrive to HubSpot.
-
-## Overview
-
-This repository contains scripts to create custom properties in HubSpot for:
-- **Contacts**: 45 properties
-- **Companies**: 39 properties  
-- **Deals**: 55 properties
-- **Leads**: 35 properties
-
-**Total: 174 properties**
-
-## Prerequisites
-
-- Node.js 22+
-- HubSpot CLI 8.5.0+
-- Private App Access Token with required scopes
+- HubSpot CLI 8.5.0+ (only used for the optional `hs auth` setup step; not used by the scripts)
+- One **Account Service Key** per portal (test and prod) with the required scopes — see
+  [Authentication](#authentication) below
 
 ## Project Structure
 
@@ -62,26 +41,92 @@ This repository contains scripts to create custom properties in HubSpot for:
     ├── .env.prod                     # Production portal credentials
     └── .env.example                  # Template for environment variables
 
+## Authentication
+
+This project uses two distinct HubSpot credentials. They are **not interchangeable** and serve
+different purposes — please keep the distinction clear when reviewing.
+
+### Account Service Key (used by all scripts in this repo)
+
+An **Account Service Key** is a portal-scoped, token-based credential that authenticates API
+calls. It replaces HubSpot's older Private App tokens for our use case (CRM property
+automation). Service Keys are HubSpot's documented direction for simple integrations and API
+testing — see <https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/account-service-keys>.
+
+- One service key per portal: a separate key is issued for the test portal and the production
+  portal. Each key only authorizes calls against its own portal.
+- Bearer-token auth: every API call sends `Authorization: Bearer <key>`. The HubSpot Node SDK
+  handles this automatically when given the key as `accessToken`.
+- Scoped permissions: the key only grants the scopes selected at creation time (see
+  [Required Scopes](#required-scopes-account-service-key) below). It does not grant broader
+  account or user access.
+- Storage: the key value is placed in `.env.test` / `.env.prod` as `HUBSPOT_ACCESS_TOKEN`.
+  Both files are excluded from Git via `.gitignore`. The key never leaves the local environment.
+- Rotation: keys can be deactivated and reissued in HubSpot at any time without code changes.
+- Limitations: Service Keys cannot be used for webhooks or UI extensions. Our scripts do
+  neither, so this limitation does not affect us.
+
+### Personal Access Key (used only for the optional CLI setup)
+
+A **Personal Access Key** authenticates the HubSpot CLI (`hs`) to a HubSpot account on the
+operator's local machine — see
+<https://developers.hubspot.com/docs/developer-tooling/local-development/hubspot-cli/personal-access-key>.
+
+- Per user, not per portal: tied to the operator's HubSpot user permissions.
+- Used only by the `hs auth` step below (which is itself optional — the migration scripts
+  do not call the CLI). It enables features like HubSpot project uploads or theme
+  development, none of which are exercised by this repo.
+- Storage: written by the CLI to `~/.hscli/config.yml`. Not stored in this repo or in any
+  `.env` file. The migration scripts never read this file.
+
+### Summary for security review
+
+| | Account Service Key | Personal Access Key |
+|---|---|---|
+| Purpose | API automation (this repo's scripts) | HubSpot CLI auth on local machine |
+| Used by `scripts/*.js` | Yes (read from `.env`) | No |
+| Stored in repo / `.env` | Value in `.env.test` and `.env.prod` only (gitignored) | Not stored anywhere in this repo |
+| Scope | Portal-scoped, restricted to selected CRM scopes | User-scoped, inherits operator's HubSpot user permissions |
+| Required for our migration | Yes | No (only needed if running optional `hs` commands) |
+
 ## Setup Instructions
 
-### 1. Install HubSpot CLI
+### 1. Install HubSpot CLI (optional)
+
+Only needed if you intend to use `hs` commands locally; not required to run the migration
+scripts.
 
     npm install -g @hubspot/cli
 
-### 2. Configure Environment Variables
+### 2. Create the Account Service Key
+
+In the HubSpot UI for the **test portal**:
+
+1. Settings → Integrations → Account Service Keys → **Create service key**
+2. Select the scopes listed in [Required Scopes](#required-scopes-account-service-key) below.
+3. Copy the generated key (format: `pat-na1-...`). You will not be able to view it again.
+
+Repeat for the production portal when ready for cutover.
+
+### 3. Configure Environment Variables
 
 Copy the example file:
 
     cp .env.example .env.test
 
-Edit .env.test and add your credentials:
+Edit `.env.test` and add your credentials:
 
     HUBSPOT_PORTAL_ID=your-test-portal-id
-    HUBSPOT_ACCESS_TOKEN=your-test-access-token
+    HUBSPOT_ACCESS_TOKEN=your-test-service-key
     ENVIRONMENT=test
     PRODUCTION_PORTAL_ID=your-prod-portal-id
 
-### 3. Authenticate HubSpot CLI
+`HUBSPOT_ACCESS_TOKEN` holds the **Account Service Key** value (not a Personal Access Key).
+
+### 4. (Optional) Authenticate HubSpot CLI
+
+Only needed if the operator plans to run `hs` commands. Uses a Personal Access Key, not the
+Service Key.
 
     hs auth
 
@@ -130,14 +175,19 @@ delete will fail if a group still contains properties.
 This project follows Maverick Payments security requirements:
 
 **6.3 API Security:**
-- Uses Private Apps only (not OAuth)
-- Tokens scoped to minimum required permissions
-- Credentials stored in .env files (excluded from Git)
+- Uses HubSpot **Account Service Keys** for API authentication (bearer tokens), not OAuth
+  and not user credentials. See [Authentication](#authentication) for details.
+- One service key per portal; each key is scoped to a single portal and a defined set of
+  CRM scopes (no broader account access)
+- Credentials stored in `.env.test` / `.env.prod` only; both files excluded from Git via
+  `.gitignore`
 - Delete scripts hard-code the test portal ID as an allowlist; no override exists
 - Delete operations limited to `pd_*` prefix properties
 - `extract-portal-state.js` is read-only and supports pre-cutover audits against any portal
 
-**Required Scopes (Private App):**
+#### Required Scopes (Account Service Key)
+
+Select the following scopes when creating the service key:
 
     crm.schemas.contacts.read
     crm.schemas.contacts.write
@@ -175,5 +225,5 @@ Proprietary - Maverick Payments
 
 ---
 
-**Last Updated**: April 30, 2026  
+**Last Updated**: May 3, 2026  
 **Maintained by**: LitCorp Admin
