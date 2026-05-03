@@ -3,263 +3,420 @@
     "name": "pd_lead_id",
     "label": "PD-Lead ID",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_title",
     "label": "PD-Lead Title",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_source",
     "label": "PD-Lead Source",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_created",
     "label": "PD-Lead created",
     "type": "date",
+    "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_update_time",
     "label": "PD-Lead Update time",
     "type": "date",
+    "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_archive_time",
     "label": "PD-Lead Archive time",
     "type": "date",
+    "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_seen",
     "label": "PD-Lead Seen",
     "type": "bool",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_currency",
     "label": "PD-Lead Currency",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_creator",
     "label": "PD-Lead Creator",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_visible_to",
     "label": "PD-Lead Visible to",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_source_origin",
     "label": "PD-Lead Source origin",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_source_origin_id",
     "label": "PD-Lead Source origin ID",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_source_channel",
     "label": "PD-Lead Source channel",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_source_channel_id",
     "label": "PD-Lead Source channel ID",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_archive_status",
     "label": "PD-Lead Archive status",
     "type": "bool",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_organization",
     "label": "PD-Lead Organization",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_organization_id",
     "label": "PD-Lead Organization ID",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_company_dba",
     "label": "PD-Lead Company DBA",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_contact_person",
     "label": "PD-Lead Contact person",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_contact_person_id",
     "label": "PD-Lead Contact person ID",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_deal_lead_source",
     "label": "PD-Lead Deal - Lead Source",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_value",
     "label": "PD-Lead Value",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_number_of_agents",
     "label": "PD-Lead Number of Agents",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_risk_level",
     "label": "PD-Lead Risk Level",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_expected_close_date",
     "label": "PD-Lead Expected close date",
     "type": "date",
+    "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_labels",
     "label": "PD-Lead Labels",
     "type": "Dropdown select",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
     "description": "Value in Pipedrive at the time of data migration.",
-    "options": [
-      {
-        "label": "Hot",
-        "value": "hot"
-      },
-      {
-        "label": "Warm",
-        "value": "warm"
-      },
-      {
-        "label": "Cold",
-        "value": "cold"
-      },
-      {
-        "label": "Website newsletter",
-        "value": "website_newsletter"
-      }
-    ]
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_demo_completed",
     "label": "PD-Lead Demo Completed",
     "type": "bool",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_rm_transition_date",
     "label": "PD-Lead RM Transition Date",
     "type": "date",
+    "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_rm_level_tier",
     "label": "PD-Lead RM Level (Tier)",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_welcome_call_date",
     "label": "PD-Lead Welcome Call Date",
     "type": "date",
+    "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_first_approval_date",
     "label": "PD-Lead First Approval Date",
     "type": "date",
+    "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_partner_id",
     "label": "PD-Lead Partner ID",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_dashboard_id",
     "label": "PD-Lead Dashboard ID",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_reassignment_date",
     "label": "PD-Lead Reassignment Date",
     "type": "date",
+    "fieldType": "date",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_lead_campaign_sent",
     "label": "PD-Lead Campaign Sent",
     "type": "string",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   }
 ]

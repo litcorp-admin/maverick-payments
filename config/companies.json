@@ -3,421 +3,468 @@
     "name": "pd_org_id",
     "label": "PD-Org ID",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_label",
     "label": "PD-Org Label",
     "type": "Dropdown select",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
     "description": "Value in Pipedrive at the time of data migration.",
-    "options": [
-      {
-        "label": "Gaming",
-        "value": "gaming"
-      },
-      {
-        "label": "Dating",
-        "value": "dating"
-      },
-      {
-        "label": "Firearms",
-        "value": "firearms"
-      },
-      {
-        "label": "REACTIVATING",
-        "value": "reactivating"
-      }
-    ]
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_people",
     "label": "PD-Org People",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_open_deals",
     "label": "PD-Org Open deals",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_organization_created",
     "label": "PD-Org Org created",
     "type": "Date picker",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_update_time",
     "label": "PD-Org Update time",
     "type": "Date picker",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_visible_to",
     "label": "PD-Org Visible to",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_next_activity_date",
     "label": "PD-Org Next activity date",
     "type": "Date picker",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_last_activity_date",
     "label": "PD-Org Last activity date",
     "type": "Date picker",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_won_deals",
     "label": "PD-Org Won deals",
     "type": "Number",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_lost_deals",
     "label": "PD-Org Lost deals",
     "type": "Number",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_closed_deals",
     "label": "PD-Org Closed deals",
     "type": "Number",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_total_activities",
     "label": "PD-Org Total activities",
     "type": "Number",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_done_activities",
     "label": "PD-Org Done activities",
     "type": "Number",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_activities_to_do",
     "label": "PD-Org Activities to do",
     "type": "Number",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_email_messages_count",
     "label": "PD-Org Email messages count",
     "type": "Number",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_year_founded",
     "label": "PD-Org Year Founded",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_role",
     "label": "PD-Org Role",
     "type": "Dropdown select",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
     "description": "Value in Pipedrive at the time of data migration.",
-    "options": [
-      {
-        "label": "Agent Office",
-        "value": "agent_office"
-      },
-      {
-        "label": "ISV",
-        "value": "isv"
-      },
-      {
-        "label": "Merchant",
-        "value": "merchant"
-      },
-      {
-        "label": "Bank",
-        "value": "bank"
-      },
-      {
-        "label": "Other",
-        "value": "other"
-      }
-    ]
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_linkedin_profile",
     "label": "PD-Org LinkedIn profile",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_qualification_notes_current_processor",
     "label": "PD-Org Qualification Notes - Current Processor",
     "type": "Multi-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_monthly_processing",
     "label": "PD-Org Monthly Processing",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_currency_of_monthly_processing",
     "label": "PD-Org Currency of Monthly Processing",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_monthly_application",
     "label": "PD-Org Monthly Application",
     "type": "Dropdown select",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
     "description": "Value in Pipedrive at the time of data migration.",
-    "options": [
-      {
-        "label": "0-1",
-        "value": "01"
-      },
-      {
-        "label": "2-5",
-        "value": "25"
-      },
-      {
-        "label": "6-10",
-        "value": "610"
-      },
-      {
-        "label": "11-15",
-        "value": "1115"
-      },
-      {
-        "label": "16-30",
-        "value": "1630"
-      },
-      {
-        "label": "31-50",
-        "value": "3150"
-      },
-      {
-        "label": "60+",
-        "value": "60"
-      }
-    ]
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_address",
     "label": "PD-Org Address",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_latitude_of_address",
     "label": "PD-Org Latitude of Address",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_longitude_of_address",
     "label": "PD-Org Longitude of Address",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_apartment_suite_no_of_address",
     "label": "PD-Org Apartment/suite no of Address",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_house_number_of_address",
     "label": "PD-Org House number of Address",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_street_road_name_of_address",
     "label": "PD-Org Street/road name of Address",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_city_town_villiage_locality",
     "label": "PD-Org City/town/village/locality of Address",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_zip_postal_code_of_address",
     "label": "PD-Org ZIP/Postal code of Address",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_state_county_of_address",
     "label": "PD-Org State/county of Address",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_district_sublocality_of_address",
     "label": "PD-Org District/sublocality of Address",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_region_of_address",
     "label": "PD-Org Region of Address",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_country_of_address",
     "label": "PD-Org Country of Address",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_full_combined_address_of_address",
     "label": "PD-Org Full/combined address of Address",
     "type": "Single-line text",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
-    "description": "Value in Pipedrive at the time of data migration."
+    "description": "Value in Pipedrive at the time of data migration.",
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_white_labeling",
     "label": "PD-Org White Labeling",
     "type": "Dropdown select",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
     "description": "Value in Pipedrive at the time of data migration.",
-    "options": [
-      {
-        "label": "Yes",
-        "value": "yes"
-      },
-      {
-        "label": "No",
-        "value": "no"
-      },
-      {
-        "label": "Future",
-        "value": "future"
-      }
-    ]
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_future_opportunity_tracking",
     "label": "PD-Org Future Opportunity Tracking",
     "type": "Multiple checkboxes",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
     "description": "Value in Pipedrive at the time of data migration.",
-    "options": [
-      {
-        "label": "Adult",
-        "value": "adult"
-      },
-      {
-        "label": "Cannabis",
-        "value": "cannabis"
-      },
-      {
-        "label": "Crypto",
-        "value": "crypto"
-      },
-      {
-        "label": "Fiserv",
-        "value": "fiserv"
-      },
-      {
-        "label": "International",
-        "value": "international"
-      },
-      {
-        "label": "Kratom",
-        "value": "kratom"
-      },
-      {
-        "label": "US Territories",
-        "value": "us_territories"
-      },
-      {
-        "label": "VPC",
-        "value": "vpc"
-      },
-      {
-        "label": "Other (free form field)",
-        "value": "other_free_form_field"
-      }
-    ]
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   },
   {
     "name": "pd_org_annual_revenue",
     "label": "PD-Org Annual Revenue",
     "type": "Dropdown select",
+    "fieldType": "text",
     "groupName": "pipedrivemigration",
     "description": "Value in Pipedrive at the time of data migration.",
-    "options": [
-      {
-        "label": "0",
-        "value": "0"
-      },
-      {
-        "label": "1 - 10M USD",
-        "value": "1__10m_usd"
-      },
-      {
-        "label": "10 - 100M USD",
-        "value": "10__100m_usd"
-      },
-      {
-        "label": "100 - 1000M USD",
-        "value": "100__1000m_usd"
-      },
-      {
-        "label": "1 - 10B USD",
-        "value": "1__10b_usd"
-      },
-      {
-        "label": "10+B USD",
-        "value": "10b_usd"
-      }
-    ]
+    "formField": false,
+    "hasUniqueValue": false,
+    "hidden": false,
+    "displayOrder": -1
   }
 ]
