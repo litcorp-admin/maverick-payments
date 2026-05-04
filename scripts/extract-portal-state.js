@@ -8,6 +8,16 @@ const PREFIX = 'pd_';
 const PLANNED_GROUPS = ['pipedrivemigration', 'marketinginformation'];
 const COMPARE_FIELDS = ['type', 'fieldType', 'groupName'];
 
+function optionsEqual(a, b) {
+  if (!a && !b) return true;
+  if (!a || !b) return false;
+  if (a.length !== b.length) return false;
+  for (let i = 0; i < a.length; i++) {
+    if (a[i].label !== b[i].label || a[i].value !== b[i].value) return false;
+  }
+  return true;
+}
+
 async function fetchObjectState(objectType) {
   const [groupsRes, propsRes] = await Promise.all([
     client.crm.properties.groupsApi.getAll(objectType),
@@ -52,6 +62,9 @@ function compareWithConfig(objectType, portalState) {
     const diffs = COMPARE_FIELDS
       .filter(k => live[k] !== cfg[k])
       .map(k => ({ field: k, portal: live[k], config: cfg[k] }));
+    if (!optionsEqual(live.options, cfg.options)) {
+      diffs.push({ field: 'options', portal: live.options || [], config: cfg.options || [] });
+    }
     return diffs.length
       ? { name: cfg.name, status: 'CONFLICT', diffs }
       : { name: cfg.name, status: 'MATCH' };
@@ -104,7 +117,16 @@ async function main() {
     if (conflicts.length) {
       conflicts.forEach(c => {
         console.log(`    ! ${c.name}`);
-        c.diffs.forEach(d => console.log(`        ${d.field}: portal="${d.portal}" vs config="${d.config}"`));
+        c.diffs.forEach(d => {
+          if (d.field === 'options') {
+            const fmt = arr => arr.map(o => `${o.label}|${o.value}`).join(';') || '(none)';
+            console.log(`        options:`);
+            console.log(`          portal: ${fmt(d.portal)}`);
+            console.log(`          config: ${fmt(d.config)}`);
+          } else {
+            console.log(`        ${d.field}: portal="${d.portal}" vs config="${d.config}"`);
+          }
+        });
       });
     }
     if (d.portalOnly.length) {
@@ -124,11 +146,11 @@ async function main() {
 main().catch(e => {
   console.error('\nERROR:', e.message);
   if (/permissions|requires one of/i.test(e.message || '')) {
-    console.error('\nThe Private App token is missing read scopes. Add these in HubSpot:');
+    console.error('\nThe Account Service Key is missing read scopes. Add these in HubSpot:');
     console.error('  crm.schemas.contacts.read');
     console.error('  crm.schemas.companies.read');
     console.error('  crm.schemas.deals.read');
-    console.error('  crm.schemas.leads.read');
+    console.error('  (leads has no schema-level read scope; the leads write scope grants list access)');
   }
   process.exit(1);
 });

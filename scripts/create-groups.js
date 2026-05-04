@@ -18,20 +18,30 @@ const groups = [
   }
 ];
 
+async function createGroup(objectType, group, attempt = 1) {
+  const MAX_ATTEMPTS = 3;
+  try {
+    await hubspotClient.crm.properties.groupsApi.create(objectType, group);
+    console.log(`✓ Created group: ${group.name}`);
+  } catch (error) {
+    if (error.code === 409) {
+      console.log(`⊘ Group already exists: ${group.name}`);
+      return;
+    }
+    if (error.code === 429 && attempt < MAX_ATTEMPTS) {
+      const delay = 1000 * Math.pow(2, attempt - 1);
+      console.log(`… Rate-limited on group ${group.name}, retrying in ${delay}ms (attempt ${attempt + 1}/${MAX_ATTEMPTS})`);
+      await new Promise(r => setTimeout(r, delay));
+      return createGroup(objectType, group, attempt + 1);
+    }
+    console.error(`✗ Failed to create ${group.name}: ${error.message}`);
+  }
+}
+
 async function createGroupsForObject(objectType) {
   console.log(`\n${objectType.toUpperCase()}:`);
-  
   for (const group of groups) {
-    try {
-      await hubspotClient.crm.properties.groupsApi.create(objectType, group);
-      console.log(`✓ Created group: ${group.name}`);
-    } catch (error) {
-      if (error.code === 409) {
-        console.log(`⊘ Group already exists: ${group.name}`);
-      } else {
-        console.error(`✗ Failed to create ${group.name}: ${error.message}`);
-      }
-    }
+    await createGroup(objectType, group);
     await new Promise(resolve => setTimeout(resolve, 100));
   }
 }

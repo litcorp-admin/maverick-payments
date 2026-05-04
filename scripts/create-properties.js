@@ -6,7 +6,8 @@ const hubspotClient = new hubspot.Client({ accessToken: process.env.HUBSPOT_ACCE
 
 const objectTypes = ['contacts', 'companies', 'deals', 'leads'];
 
-async function createProperty(objectType, property) {
+async function createProperty(objectType, property, attempt = 1) {
+  const MAX_ATTEMPTS = 3;
   try {
     await hubspotClient.crm.properties.coreApi.create(objectType, property);
     console.log(`✓ Created ${objectType}.${property.name}`);
@@ -15,6 +16,12 @@ async function createProperty(objectType, property) {
     if (error.code === 409) {
       console.log(`⊘ Already exists: ${objectType}.${property.name}`);
       return { success: true, property: property.name, skipped: true };
+    }
+    if (error.code === 429 && attempt < MAX_ATTEMPTS) {
+      const delay = 1000 * Math.pow(2, attempt - 1);
+      console.log(`… Rate-limited on ${objectType}.${property.name}, retrying in ${delay}ms (attempt ${attempt + 1}/${MAX_ATTEMPTS})`);
+      await new Promise(r => setTimeout(r, delay));
+      return createProperty(objectType, property, attempt + 1);
     }
     console.error(`✗ Failed ${objectType}.${property.name}: ${error.message}`);
     return { success: false, property: property.name, error: error.message };

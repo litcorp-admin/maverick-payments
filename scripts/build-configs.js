@@ -41,7 +41,9 @@ function normalizeGroupName(s) {
 }
 
 function parseOptions(raw) {
-  return raw.split(';').map((entry, i) => {
+  const seen = new Set();
+  const dupes = [];
+  const options = raw.split(';').map((entry, i) => {
     const [labelPart, valuePart] = entry.split('|');
     const label = labelPart.trim();
     const value = (valuePart !== undefined ? valuePart : label)
@@ -49,8 +51,11 @@ function parseOptions(raw) {
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, '_')
       .replace(/^_|_$/g, '');
+    if (seen.has(value)) dupes.push(value);
+    seen.add(value);
     return { label, value, displayOrder: i, hidden: false };
   });
+  return { options, dupes };
 }
 
 function build(objectType, csvPath) {
@@ -71,7 +76,7 @@ function build(objectType, csvPath) {
   }
 
   const out = [];
-  const warnings = [];
+  const errors = [];
 
   for (let r = 1; r < rows.length; r++) {
     const row = rows[r];
@@ -90,16 +95,16 @@ function build(objectType, csvPath) {
     const optionsRaw = (iOpts >= 0 ? (row[iOpts] || '').trim() : '');
 
     if (name !== name.toLowerCase()) {
-      warnings.push(`row ${r+1} ${name}: name has uppercase characters`);
+      errors.push(`row ${r+1} ${name}: name has uppercase characters (HubSpot rejects uppercase)`);
     }
     if (!VALID_TYPE.includes(type)) {
-      warnings.push(`row ${r+1} ${name}: invalid type="${type}"`);
+      errors.push(`row ${r+1} ${name}: invalid type="${type}"`);
     }
     if (!VALID_FT.includes(fieldType)) {
-      warnings.push(`row ${r+1} ${name}: invalid fieldType="${fieldType}"`);
+      errors.push(`row ${r+1} ${name}: invalid fieldType="${fieldType}"`);
     }
     if ((type === 'enumeration' || type === 'bool') && !optionsRaw) {
-      warnings.push(`row ${r+1} ${name}: ${type} requires options`);
+      errors.push(`row ${r+1} ${name}: ${type} requires options`);
     }
 
     const prop = {
@@ -110,23 +115,42 @@ function build(objectType, csvPath) {
       groupName: normalizeGroupName(groupRaw),
       description,
     };
-    if (optionsRaw) prop.options = parseOptions(optionsRaw);
+    if (optionsRaw) {
+      const { options, dupes } = parseOptions(optionsRaw);
+      if (dupes.length) {
+        errors.push(`row ${r+1} ${name}: duplicate option value(s) after slugification: ${[...new Set(dupes)].join(', ')}`);
+      }
+      prop.options = options;
+    }
 
     out.push(prop);
   }
 
-  return { properties: out, warnings };
+  return { properties: out, errors };
 }
 
 function main() {
-  const summary = {};
+  const built = {};
+  let totalErrors = 0;
   for (const [objectType, csvPath] of Object.entries(SOURCES)) {
-    const { properties, warnings } = build(objectType, csvPath);
+    const { properties, errors } = build(objectType, csvPath);
+    built[objectType] = properties;
+    totalErrors += errors.length;
+    console.log(`\n${objectType.toUpperCase()}: ${properties.length} rows, ${errors.length} error(s)`);
+    errors.forEach(e => console.log('  ! ' + e));
+  }
+
+  if (totalErrors > 0) {
+    console.error(`\nAborting: ${totalErrors} validation error(s). No config files written.`);
+    process.exit(1);
+  }
+
+  const summary = {};
+  for (const [objectType, properties] of Object.entries(built)) {
     const outPath = `config/${objectType}.json`;
     fs.writeFileSync(outPath, JSON.stringify(properties, null, 2) + '\n');
-    summary[objectType] = { written: properties.length, warnings: warnings.length };
-    console.log(`\n${objectType.toUpperCase()}: wrote ${properties.length} → ${outPath}`);
-    warnings.forEach(w => console.log('  ! ' + w));
+    summary[objectType] = properties.length;
+    console.log(`Wrote ${properties.length} → ${outPath}`);
   }
   console.log('\nSummary:', summary);
 }
